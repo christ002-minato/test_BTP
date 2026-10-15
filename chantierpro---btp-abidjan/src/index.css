@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Barlow Condensed', -apple-system, sans-serif;
+    --font-body: 'Barlow', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Custom engineering blueprint grid patterns */
+.bg-blueprint-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
+.bg-blueprint-grid-dark {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
+
+.bg-blueprint-dots {
+  background-image: radial-gradient(rgba(11, 27, 58, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Safety construction stripes (hachures sécurité chantier) */
+.bg-stripes-safety {
+  background: repeating-linear-gradient(
+    45deg,
+    #F26B1D,
+    #F26B1D 10px,
+    #0B1B3A 10px,
+    #0B1B3A 20px
+  );
+}
+
+.bg-stripes-safety-soft {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(242, 107, 29, 0.15),
+    rgba(242, 107, 29, 0.15) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+/* Custom discreet scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
