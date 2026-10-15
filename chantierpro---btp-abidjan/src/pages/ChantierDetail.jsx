@@ -124,7 +124,7 @@ export default function ChantierDetail() {
         <button
           type="button"
           onClick={() => navigate('/chantiers')}
-          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-[#0B1B3A] dark:hover:text-white transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 hover:text-[#1E293B] dark:hover:text-white transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Retour à la liste des chantiers</span>
@@ -146,12 +146,12 @@ export default function ChantierDetail() {
             alt={site.name}
             className="w-full h-full object-cover opacity-85"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B3A] via-[#0B1B3A]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-[#1E293B]/40 to-transparent" />
 
           {/* Informations superposées */}
           <div className="absolute bottom-5 left-5 right-5 text-white flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-1">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#F26B1D] font-bold">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-[#A64B2A] font-bold">
                 {site.type}
               </span>
               <h1 className="font-heading text-2xl sm:text-3xl font-black uppercase text-white tracking-tight leading-tight">
@@ -159,24 +159,24 @@ export default function ChantierDetail() {
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300">
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#F26B1D]" />
+                  <MapPin className="w-3.5 h-3.5 text-[#A64B2A]" />
                   {site.commune}, {site.city}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <HardHat className="w-3.5 h-3.5 text-[#F26B1D]" />
+                  <HardHat className="w-3.5 h-3.5 text-[#A64B2A]" />
                   Chef : {site.chefName}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-[#F26B1D]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#A64B2A]" />
                   Livraison : {formatDate(site.dateFinPrevue, 'short')}
                 </span>
               </div>
             </div>
 
             {/* Pourcentage d'avancement principal */}
-            <div className="bg-[#0B1B3A]/90 backdrop-blur-xs p-3.5 rounded-xl border border-white/10 text-right shrink-0">
+            <div className="bg-[#1E293B]/90 backdrop-blur-xs p-3.5 rounded-xl border border-white/10 text-right shrink-0">
               <span className="text-[10px] text-slate-400 uppercase font-mono block">Avancement global</span>
-              <div className="text-3xl font-black font-heading text-[#F26B1D]">
+              <div className="text-3xl font-black font-heading text-[#A64B2A]">
                 {site.progress}%
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function ChantierDetail() {
         </div>
 
         {/* ================= ONGLETS DE NAVIGATION ================= */}
-        <div className="px-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850 flex items-center gap-2 overflow-x-auto">
+        <div className="px-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 flex items-center gap-2 overflow-x-auto">
           {[
             { id: 'overview', label: 'Vue d\'ensemble', icon: Building2 },
             { id: 'stocks', label: `Stocks du chantier (${siteMaterials.length})`, icon: Package },
@@ -200,11 +200,11 @@ export default function ChantierDetail() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`py-3.5 px-3.5 text-xs sm:text-sm font-heading uppercase tracking-wider font-bold border-b-2 flex items-center gap-2 transition-all cursor-pointer whitespace-nowrap ${
                   isActive
-                    ? 'border-[#F26B1D] text-[#0B1B3A] dark:text-white bg-white dark:bg-slate-900'
+                    ? 'border-[#A64B2A] text-[#1E293B] dark:text-white bg-white dark:bg-slate-900'
                     : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-[#F26B1D]' : 'text-slate-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-[#A64B2A]' : 'text-slate-400'}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -288,7 +288,7 @@ export default function ChantierDetail() {
               <div className="space-y-4">
                 <div>
                   <span className="text-xs text-slate-400 font-mono uppercase block">Budget Total Alloué</span>
-                  <div className="text-2xl font-black font-heading text-[#0B1B3A] dark:text-white font-mono">
+                  <div className="text-2xl font-black font-heading text-[#1E293B] dark:text-white font-mono">
                     {formatFCFA(site.budgetTotal)}
                   </div>
                 </div>
@@ -296,13 +296,13 @@ export default function ChantierDetail() {
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-mono">
                     <span className="text-slate-500">Engagé : {formatFCFA(site.budgetConsomme)}</span>
-                    <strong className="text-[#F26B1D]">
+                    <strong className="text-[#A64B2A]">
                       {Math.round((site.budgetConsomme / (site.budgetTotal || 1)) * 100)}%
                     </strong>
                   </div>
                   <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-3 overflow-hidden">
                     <div
-                      className="bg-gradient-to-r from-emerald-500 to-[#F26B1D] h-full rounded-full"
+                      className="bg-gradient-to-r from-emerald-500 to-[#A64B2A] h-full rounded-full"
                       style={{ width: `${(site.budgetConsomme / (site.budgetTotal || 1)) * 100}%` }}
                     />
                   </div>
@@ -437,7 +437,7 @@ export default function ChantierDetail() {
                 <TableCell className="font-mono text-xs text-slate-400">
                   {emp.matricule}
                 </TableCell>
-                <TableCell className="text-xs font-semibold text-[#0B1B3A] dark:text-slate-200">
+                <TableCell className="text-xs font-semibold text-[#1E293B] dark:text-slate-200">
                   {emp.fonction}
                 </TableCell>
                 <TableCell className="text-xs text-slate-500">
@@ -467,7 +467,7 @@ export default function ChantierDetail() {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-heading text-lg font-black uppercase text-[#0B1B3A] dark:text-white">
+              <h3 className="font-heading text-lg font-black uppercase text-[#1E293B] dark:text-white">
                 Rapports Quotidiens de Chantier
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -497,10 +497,10 @@ export default function ChantierDetail() {
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
                     <div>
-                      <span className="text-[11px] font-mono text-[#F26B1D] font-bold uppercase">
+                      <span className="text-[11px] font-mono text-[#A64B2A] font-bold uppercase">
                         {formatDate(log.date, 'long')} à {log.heure}
                       </span>
-                      <h4 className="font-heading font-black text-base text-[#0B1B3A] dark:text-white uppercase mt-0.5">
+                      <h4 className="font-heading font-black text-base text-[#1E293B] dark:text-white uppercase mt-0.5">
                         {log.titre}
                       </h4>
                     </div>

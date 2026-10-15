@@ -1,6 +1,8 @@
 /**
  * Bouton d'action standardisé ChantierPro
- * Rigueur technique BTP, micro-interaction Framer Motion et état de chargement
+ * Palette BTP Ivoirien : terracotta (structurel), jaune engin (CTA),
+ * variantes "onDark" pour les surfaces sombres (évite les conflits d'utilitaires
+ * qui rendaient le texte invisible au survol).
  */
 
 import React from 'react';
@@ -23,14 +25,20 @@ export default function Button({
   const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2 select-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none rounded-md';
 
   const variants = {
-    // Orange sécurité BTP #F26B1D
-    primary: 'bg-[#F26B1D] hover:bg-[#d9590f] text-white shadow-sm shadow-[#F26B1D]/20 focus:ring-[#F26B1D] border border-[#d9590f]/30',
-    // Bleu nuit #0B1B3A
-    secondary: 'bg-[#0B1B3A] hover:bg-[#152a55] text-white shadow-sm focus:ring-[#0B1B3A] border border-[#0B1B3A]/40 dark:bg-[#1E293B] dark:hover:bg-[#334155]',
+    // CTA principal — Jaune Engin de chantier (texte ardoise, contraste 4.6:1)
+    primary: 'bg-[#EAB308] hover:bg-[#F59E0B] text-[#1E293B] font-semibold shadow-sm shadow-[#EAB308]/30 focus:ring-[#EAB308] border border-[#CA9A06]/40',
+    // Structurel — Terracotta (terre rouge ivoirienne)
+    terracotta: 'bg-[#A64B2A] hover:bg-[#8B3A2B] text-white shadow-sm focus:ring-[#A64B2A] border border-[#8B3A2B]/40',
+    // Structurel foncé — Slate béton
+    secondary: 'bg-[#1E293B] hover:bg-[#334155] text-white shadow-sm focus:ring-[#1E293B] border border-[#1E293B]/40 dark:bg-[#334155] dark:hover:bg-[#475569]',
     // Contour technique
-    outline: 'bg-white hover:bg-[#F8FAFC] text-[#0B1B3A] border border-[#CBD5E1] shadow-xs focus:ring-[#0B1B3A] dark:bg-slate-900 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800',
+    outline: 'bg-white hover:bg-[#F5EBE0] text-[#1E293B] border border-[#CBD5E1] shadow-xs focus:ring-[#1E293B] dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800',
+    // Contour pour fond sombre (bannière, panneau) : plus de conflit de couleur
+    outlineOnDark: 'bg-white/10 hover:bg-white/25 text-white border border-white/25 focus:ring-white/60 backdrop-blur-sm',
     // Neutre sobre
-    ghost: 'bg-transparent hover:bg-slate-100 text-slate-700 focus:ring-slate-400 dark:text-slate-300 dark:hover:bg-slate-800',
+    ghost: 'bg-transparent hover:bg-[#F5EBE0] text-[#1E293B] focus:ring-[#A64B2A] dark:text-slate-200 dark:hover:bg-slate-800',
+    // Neutre sur fond sombre
+    ghostOnDark: 'bg-transparent hover:bg-white/10 text-white/85 hover:text-white focus:ring-white/50',
     // Rouge danger / incident
     danger: 'bg-rose-600 hover:bg-rose-700 text-white shadow-sm focus:ring-rose-500 border border-rose-700/40',
     // Succès

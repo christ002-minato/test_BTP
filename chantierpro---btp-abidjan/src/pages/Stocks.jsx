@@ -229,7 +229,7 @@ export default function Stocks() {
       {/* ================= EN-TÊTE & BOUTONS D'ACTIONS ================= */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
             Gestion des Stocks & Matériaux
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
@@ -289,7 +289,7 @@ export default function Stocks() {
                 setCurrentPage(1);
               }}
               placeholder="Rechercher par libellé de matériau, référence, chantier..."
-              className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0B1B3A]"
+              className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E293B]"
             />
           </div>
 
@@ -353,7 +353,7 @@ export default function Stocks() {
               }}
               className={`px-2.5 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer ${
                 statusFilter === st.id
-                  ? 'bg-[#0B1B3A] text-white dark:bg-blue-600'
+                  ? 'bg-[#1E293B] text-white dark:bg-blue-600'
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
               }`}
             >
@@ -388,7 +388,7 @@ export default function Stocks() {
               {/* Libellé & Code */}
               <TableCell>
                 <div className="min-w-0">
-                  <span className="font-heading font-black text-sm text-[#0B1B3A] dark:text-white block uppercase">
+                  <span className="font-heading font-black text-sm text-[#1E293B] dark:text-white block uppercase">
                     {mat.name}
                   </span>
                   <span className="font-mono text-[11px] text-slate-400">
@@ -871,7 +871,7 @@ export default function Stocks() {
                 onClick={() => setHistoryFilterType(f)}
                 className={`flex-1 py-1 px-2 rounded-md font-medium uppercase text-[10px] tracking-wider transition-colors cursor-pointer ${
                   historyFilterType === f
-                    ? 'bg-white dark:bg-slate-900 text-[#0B1B3A] dark:text-white font-bold shadow-2xs'
+                    ? 'bg-white dark:bg-slate-900 text-[#1E293B] dark:text-white font-bold shadow-2xs'
                     : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
                 }`}
               >

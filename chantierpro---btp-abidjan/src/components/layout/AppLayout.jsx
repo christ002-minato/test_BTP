@@ -28,7 +28,7 @@ export default function AppLayout() {
   }, []);
 
   return (
-    <div className="flex h-screen w-full bg-[#F4F6F9] dark:bg-slate-950 text-slate-800 dark:text-slate-100 overflow-hidden">
+    <div className="flex h-screen w-full bg-[#F5EBE0] dark:bg-slate-950 text-slate-800 dark:text-slate-100 overflow-hidden">
       {/* Sidebar latérale */}
       <Sidebar
         collapsed={collapsed}

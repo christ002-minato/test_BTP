@@ -114,7 +114,7 @@ export default function Fournisseurs() {
       {/* ================= EN-TÊTE ET COMMUTATEUR ONGLETS ================= */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
             Fournisseurs & Bons de Commande
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
@@ -142,7 +142,7 @@ export default function Fournisseurs() {
           onClick={() => setActiveTab('orders')}
           className={`py-2.5 px-4 font-heading text-sm uppercase tracking-wider font-bold border-b-2 transition-all cursor-pointer ${
             activeTab === 'orders'
-              ? 'border-[#F26B1D] text-[#0B1B3A] dark:text-white'
+              ? 'border-[#A64B2A] text-[#1E293B] dark:text-white'
               : 'border-transparent text-slate-400 hover:text-slate-700'
           }`}
         >
@@ -154,7 +154,7 @@ export default function Fournisseurs() {
           onClick={() => setActiveTab('suppliers')}
           className={`py-2.5 px-4 font-heading text-sm uppercase tracking-wider font-bold border-b-2 transition-all cursor-pointer ${
             activeTab === 'suppliers'
-              ? 'border-[#F26B1D] text-[#0B1B3A] dark:text-white'
+              ? 'border-[#A64B2A] text-[#1E293B] dark:text-white'
               : 'border-transparent text-slate-400 hover:text-slate-700'
           }`}
         >
@@ -175,7 +175,7 @@ export default function Fournisseurs() {
                 ? 'Rechercher par référence BC, fournisseur, chantier...'
                 : 'Rechercher une entreprise, catégorie, interlocuteur...'
             }
-            className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0B1B3A]"
+            className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E293B]"
           />
         </div>
 
@@ -188,7 +188,7 @@ export default function Fournisseurs() {
                 onClick={() => setStatusFilter(st)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer ${
                   statusFilter === st
-                    ? 'bg-[#0B1B3A] text-white dark:bg-blue-600 font-bold'
+                    ? 'bg-[#1E293B] text-white dark:bg-blue-600 font-bold'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
                 }`}
               >
@@ -222,7 +222,7 @@ export default function Fournisseurs() {
           ) : (
             filteredOrders.map((po) => (
               <TableRow key={po.id}>
-                <TableCell className="font-mono font-bold text-xs text-[#0B1B3A] dark:text-white">
+                <TableCell className="font-mono font-bold text-xs text-[#1E293B] dark:text-white">
                   {po.code}
                 </TableCell>
                 <TableCell className="font-semibold text-xs text-slate-800 dark:text-slate-200">
@@ -237,7 +237,7 @@ export default function Fournisseurs() {
                 <TableCell className="font-mono text-xs text-slate-500">
                   {formatDate(po.dateLivraisonEstimee, 'short')}
                 </TableCell>
-                <TableCell className="font-mono font-bold text-xs text-[#0B1B3A] dark:text-slate-100">
+                <TableCell className="font-mono font-bold text-xs text-[#1E293B] dark:text-slate-100">
                   {formatFCFA(po.totalTTC)}
                 </TableCell>
                 <TableCell>
@@ -297,7 +297,7 @@ export default function Fournisseurs() {
             >
               <div className="space-y-2">
                 <div className="flex items-start justify-between gap-2">
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#F26B1D] font-mono">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#A64B2A] font-mono">
                     {sup.code}
                   </span>
                   <div className="flex items-center gap-1 text-amber-500 font-bold text-xs">
@@ -306,7 +306,7 @@ export default function Fournisseurs() {
                   </div>
                 </div>
 
-                <h3 className="font-heading font-black text-lg text-[#0B1B3A] dark:text-white uppercase leading-snug">
+                <h3 className="font-heading font-black text-lg text-[#1E293B] dark:text-white uppercase leading-snug">
                   {sup.name}
                 </h3>
 
@@ -488,7 +488,7 @@ export default function Fournisseurs() {
             {/* Entête du bon imprimable */}
             <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex justify-between items-start">
               <div>
-                <h4 className="font-heading font-black text-xl text-[#0B1B3A] dark:text-white uppercase">
+                <h4 className="font-heading font-black text-xl text-[#1E293B] dark:text-white uppercase">
                   ChantierPro Côte d'Ivoire
                 </h4>
                 <p className="text-xs text-slate-500 font-mono">
@@ -500,7 +500,7 @@ export default function Fournisseurs() {
               </div>
 
               <div className="text-right">
-                <span className="font-mono text-sm font-black text-[#F26B1D] block">
+                <span className="font-mono text-sm font-black text-[#A64B2A] block">
                   {selectedPO.code}
                 </span>
                 <span className="text-xs text-slate-400">
@@ -549,10 +549,10 @@ export default function Fournisseurs() {
                     </tr>
                   ))}
                 </tbody>
-                <tfoot className="bg-slate-50 dark:bg-slate-850 font-bold border-t border-slate-200 dark:border-slate-700">
+                <tfoot className="bg-slate-50 dark:bg-slate-800 font-bold border-t border-slate-200 dark:border-slate-700">
                   <tr>
                     <td colSpan={3} className="p-3 text-right uppercase">Total Général TTC :</td>
-                    <td className="p-3 text-right font-mono text-[#F26B1D] text-sm">
+                    <td className="p-3 text-right font-mono text-[#A64B2A] text-sm">
                       {formatFCFA(selectedPO.totalTTC)}
                     </td>
                   </tr>

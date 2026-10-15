@@ -43,7 +43,7 @@ export default function Modal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#0B1B3A]/70 backdrop-blur-xs"
+            className="fixed inset-0 bg-[#1E293B]/70 backdrop-blur-xs"
           />
 
           {/* Conteneur modal */}
@@ -55,9 +55,9 @@ export default function Modal({
             className={`relative w-full ${maxWidth} bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xl overflow-hidden z-10 my-8`}
           >
             {/* Entête technique */}
-            <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-850 flex items-center justify-between">
+            <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800 flex items-center justify-between">
               <div>
-                <h3 className="font-heading text-lg font-bold text-[#0B1B3A] dark:text-white uppercase tracking-wider">
+                <h3 className="font-heading text-lg font-bold text-[#1E293B] dark:text-white uppercase tracking-wider">
                   {title}
                 </h3>
                 {subtitle && (

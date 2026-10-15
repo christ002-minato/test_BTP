@@ -46,8 +46,8 @@ export default function Badge({
     info: 'bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800',
     // Neutre / Gris ardoise
     neutral: 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700',
-    // Orange sécurité
-    safety: 'bg-orange-50 dark:bg-orange-950/50 text-[#F26B1D] dark:text-orange-300 border border-orange-200 dark:border-orange-800'
+    // Sécurité chantier — jaune engin (accent marque)
+    safety: 'bg-yellow-50 dark:bg-[#EAB308]/15 text-[#8B6A05] dark:text-[#EAB308] border border-[#EAB308]/50 dark:border-[#EAB308]/40'
   };
 
   const dotColors = {
@@ -57,7 +57,7 @@ export default function Badge({
     success: 'bg-emerald-500',
     info: 'bg-blue-500',
     neutral: 'bg-slate-500',
-    safety: 'bg-[#F26B1D]'
+    safety: 'bg-[#EAB308]'
   };
 
   const sizes = {

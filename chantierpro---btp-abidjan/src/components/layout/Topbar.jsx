@@ -92,7 +92,7 @@ export default function Topbar({ onOpenMobileMenu, onOpenCommandPalette }) {
             ChantierPro
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-          <span className="text-[#0B1B3A] dark:text-white font-semibold truncate font-heading tracking-wide uppercase text-sm">
+          <span className="text-[#1E293B] dark:text-white font-semibold truncate font-heading tracking-wide uppercase text-sm">
             {getBreadcrumb()}
           </span>
         </nav>
@@ -154,7 +154,7 @@ export default function Topbar({ onOpenMobileMenu, onOpenCommandPalette }) {
                 className="absolute right-0 mt-2 w-80 sm:w-96 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl overflow-hidden z-50"
               >
                 <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/40">
-                  <span className="font-heading font-bold text-sm text-[#0B1B3A] dark:text-white uppercase tracking-wider">
+                  <span className="font-heading font-bold text-sm text-[#1E293B] dark:text-white uppercase tracking-wider">
                     Alertes & Activités
                   </span>
                   <Badge variant="rupture" size="sm">
@@ -202,7 +202,7 @@ export default function Topbar({ onOpenMobileMenu, onOpenCommandPalette }) {
                   <Link
                     to="/stocks"
                     onClick={() => setNotificationsOpen(false)}
-                    className="text-xs font-semibold text-[#F26B1D] hover:underline"
+                    className="text-xs font-semibold text-[#A64B2A] hover:underline"
                   >
                     Voir l'inventaire complet →
                   </Link>
@@ -225,7 +225,7 @@ export default function Topbar({ onOpenMobileMenu, onOpenCommandPalette }) {
             <img
               src={currentUser?.avatar || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100'}
               alt={currentUser?.name || 'Utilisateur'}
-              className="w-8 h-8 rounded-full object-cover ring-2 ring-[#0B1B3A]/20 dark:ring-white/20"
+              className="w-8 h-8 rounded-full object-cover ring-2 ring-[#1E293B]/20 dark:ring-white/20"
             />
             <div className="hidden sm:block text-left">
               <p className="text-xs font-bold text-slate-800 dark:text-slate-100 leading-tight">

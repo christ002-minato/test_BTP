@@ -57,10 +57,10 @@ function ToastItem({ toast, onDismiss }) {
     },
     info: {
       icon: Info,
-      border: 'border-[#0B1B3A] dark:border-blue-500',
+      border: 'border-[#1E293B] dark:border-blue-500',
       bg: 'bg-white dark:bg-slate-900',
-      iconColor: 'text-[#0B1B3A] dark:text-blue-400',
-      stripe: 'bg-[#0B1B3A]'
+      iconColor: 'text-[#1E293B] dark:text-blue-400',
+      stripe: 'bg-[#1E293B]'
     }
   };
 
@@ -94,7 +94,7 @@ function ToastItem({ toast, onDismiss }) {
                 action.onClick();
                 onDismiss();
               }}
-              className="text-xs font-bold text-[#F26B1D] hover:underline uppercase tracking-wider cursor-pointer"
+              className="text-xs font-bold text-[#A64B2A] hover:underline uppercase tracking-wider cursor-pointer"
             >
               {action.label}
             </button>

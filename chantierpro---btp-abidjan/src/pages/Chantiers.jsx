@@ -106,7 +106,7 @@ export default function Chantiers() {
       {/* ================= EN-TÊTE DE LA PAGE ================= */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
             {isChef ? 'Mes Chantiers Assignés' : 'Supervision des Chantiers'}
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
@@ -122,7 +122,7 @@ export default function Chantiers() {
               onClick={() => setViewMode('grid')}
               className={`p-1.5 rounded-md text-xs flex items-center gap-1.5 transition-colors cursor-pointer ${
                 viewMode === 'grid'
-                  ? 'bg-[#0B1B3A] text-white'
+                  ? 'bg-[#1E293B] text-white'
                   : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
               title="Vue Grille de Cartes"
@@ -135,7 +135,7 @@ export default function Chantiers() {
               onClick={() => setViewMode('table')}
               className={`p-1.5 rounded-md text-xs flex items-center gap-1.5 transition-colors cursor-pointer ${
                 viewMode === 'table'
-                  ? 'bg-[#0B1B3A] text-white'
+                  ? 'bg-[#1E293B] text-white'
                   : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
               title="Vue Tableau de Données"
@@ -170,7 +170,7 @@ export default function Chantiers() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Rechercher par nom de chantier, commune, chef de projet..."
-            className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0B1B3A] dark:focus:ring-blue-500"
+            className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E293B] dark:focus:ring-blue-500"
           />
         </div>
 
@@ -183,7 +183,7 @@ export default function Chantiers() {
               onClick={() => setStatusFilter(st)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                 statusFilter === st
-                  ? 'bg-[#F26B1D] text-white font-semibold'
+                  ? 'bg-[#A64B2A] text-white font-semibold'
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
@@ -212,7 +212,7 @@ export default function Chantiers() {
             <div
               key={site.id}
               onClick={() => navigate(`/chantiers/${site.id}`)}
-              className="group bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-[#F26B1D] shadow-xs hover:shadow-md transition-all duration-200 overflow-hidden cursor-pointer flex flex-col justify-between"
+              className="group bg-white dark:bg-slate-900 rounded-xl border border-[#E8DFD8] dark:border-slate-800 hover:border-[#A64B2A] shadow-xs hover:shadow-md card-hover overflow-hidden cursor-pointer flex flex-col justify-between"
             >
               <div>
                 {/* Image de couverture avec badge statut */}
@@ -231,7 +231,7 @@ export default function Chantiers() {
 
                   {/* Localisation */}
                   <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-xs text-white/90 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-[#F26B1D]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#A64B2A]" />
                     <span>{site.commune}, {site.city}</span>
                   </div>
                 </div>
@@ -239,10 +239,10 @@ export default function Chantiers() {
                 {/* Détails du projet */}
                 <div className="p-5 space-y-3">
                   <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#F26B1D] block">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#A64B2A] block">
                       {site.type}
                     </span>
-                    <h3 className="font-heading font-black text-lg text-[#0B1B3A] dark:text-white uppercase leading-snug group-hover:text-[#F26B1D] transition-colors mt-0.5">
+                    <h3 className="font-heading font-black text-lg text-[#1E293B] dark:text-white uppercase leading-snug group-hover:text-[#A64B2A] dark:group-hover:text-[#EAB308] transition-colors mt-0.5">
                       {site.name}
                     </h3>
                   </div>
@@ -263,11 +263,11 @@ export default function Chantiers() {
                   <div className="space-y-1.5 pt-2 border-t border-slate-100 dark:border-slate-800">
                     <div className="flex items-center justify-between text-xs font-mono">
                       <span className="text-slate-500">Avancement physique</span>
-                      <strong className="text-[#0B1B3A] dark:text-slate-100">{site.progress}%</strong>
+                      <strong className="text-[#1E293B] dark:text-slate-100">{site.progress}%</strong>
                     </div>
-                    <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+                    <div className="w-full bg-[#E8DFD8] dark:bg-slate-800 rounded-full h-2 overflow-hidden">
                       <div
-                        className="bg-gradient-to-r from-[#0B1B3A] to-[#F26B1D] h-full rounded-full"
+                        className="bg-gradient-to-r from-[#A64B2A] to-[#EAB308] h-full rounded-full"
                         style={{ width: `${site.progress}%` }}
                       />
                     </div>
@@ -276,10 +276,10 @@ export default function Chantiers() {
               </div>
 
               {/* Pied de carte avec budget */}
-              <div className="px-5 py-3 bg-slate-50 dark:bg-slate-850 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+              <div className="px-5 py-3 bg-[#F5EBE0]/70 dark:bg-slate-800 border-t border-[#E8DFD8] dark:border-slate-800 flex items-center justify-between text-xs">
                 <div>
                   <span className="text-[10px] text-slate-400 block uppercase font-mono">Budget consommé</span>
-                  <span className="font-bold text-[#0B1B3A] dark:text-slate-200 font-mono">
+                  <span className="font-bold text-[#1E293B] dark:text-slate-200 font-mono">
                     {formatFCFA(site.budgetConsomme)}
                   </span>
                 </div>
@@ -330,7 +330,7 @@ export default function Chantiers() {
                   <span className="font-mono font-bold text-xs">{site.progress}%</span>
                   <div className="w-16 bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
                     <div
-                      className="bg-[#F26B1D] h-full"
+                      className="bg-[#A64B2A] h-full"
                       style={{ width: `${site.progress}%` }}
                     />
                   </div>
@@ -343,7 +343,7 @@ export default function Chantiers() {
                 <Badge size="sm">{site.status}</Badge>
               </TableCell>
               <TableCell>
-                <span className="text-xs text-[#F26B1D] font-bold hover:underline flex items-center gap-1">
+                <span className="text-xs text-[#A64B2A] font-bold hover:underline flex items-center gap-1">
                   Ouvrir <ArrowRight className="w-3 h-3" />
                 </span>
               </TableCell>
@@ -371,7 +371,7 @@ export default function Chantiers() {
               value={newSiteName}
               onChange={(e) => setNewSiteName(e.target.value)}
               placeholder="ex: Résidence Les Jardins d'Éden - Riviera Golf"
-              className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#0B1B3A]"
+              className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#1E293B]"
             />
           </div>
 

@@ -1732,7 +1732,7 @@ export const ATTENDANCE_BREAKDOWN = [
 ];
 
 export const SITE_PROGRESS_SUMMARY = [
-  { name: 'Cocody Ambassades', progress: 72, budgetRatio: 72, color: '#F26B1D' },
+  { name: 'Cocody Ambassades', progress: 72, budgetRatio: 72, color: '#A64B2A' },
   { name: 'Yopougon Lagune', progress: 65, budgetRatio: 65, color: '#3B82F6' },
   { name: 'San-Pédro Port', progress: 35, budgetRatio: 35, color: '#10B981' },
   { name: 'Port-Bouët Vridi', progress: 90, budgetRatio: 90, color: '#8B5CF6' },

@@ -100,7 +100,7 @@ export default function Pointage() {
       {/* ================= EN-TÊTE ET ACTIONS GLOBALES ================= */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
             Pointage Journalier des Équipes
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
@@ -190,7 +190,7 @@ export default function Pointage() {
           <span className="text-[11px] font-bold text-slate-400 uppercase font-mono block">
             Effectif Théorique
           </span>
-          <div className="text-2xl font-black font-heading text-[#0B1B3A] dark:text-white mt-1">
+          <div className="text-2xl font-black font-heading text-[#1E293B] dark:text-white mt-1">
             {totalCount} ouvriers
           </div>
         </div>
@@ -224,9 +224,9 @@ export default function Pointage() {
       </div>
 
       {/* ================= BANDEAU D'AIDE AUX RACCOURCIS CLAVIERS ================= */}
-      <div className="px-4 py-2.5 rounded-lg bg-[#0B1B3A]/5 dark:bg-slate-850 border border-[#0B1B3A]/10 dark:border-slate-700 flex flex-wrap items-center justify-between text-xs text-slate-600 dark:text-slate-300 gap-2">
+      <div className="px-4 py-2.5 rounded-lg bg-[#1E293B]/5 dark:bg-slate-800 border border-[#1E293B]/10 dark:border-slate-700 flex flex-wrap items-center justify-between text-xs text-slate-600 dark:text-slate-300 gap-2">
         <div className="flex items-center gap-2">
-          <HelpCircle className="w-4 h-4 text-[#F26B1D]" />
+          <HelpCircle className="w-4 h-4 text-[#A64B2A]" />
           <span className="font-semibold">Saisie ultra-rapide au clavier :</span>
           <span>Sélectionnez une ligne, puis appuyez sur :</span>
         </div>
@@ -270,7 +270,7 @@ export default function Pointage() {
               <TableRow
                 key={emp.id}
                 onClick={() => setFocusedIndex(index)}
-                className={isFocused ? 'bg-[#F26B1D]/5 dark:bg-orange-950/20 ring-1 ring-[#F26B1D]/40' : ''}
+                className={isFocused ? 'bg-[#A64B2A]/5 dark:bg-orange-950/20 ring-1 ring-[#A64B2A]/40' : ''}
               >
                 {/* Index indicateur */}
                 <TableCell className="w-8 font-mono text-xs text-slate-400">
@@ -283,7 +283,7 @@ export default function Pointage() {
                     <span className="font-bold text-slate-900 dark:text-slate-100 text-sm block">
                       {emp.prenom} {emp.nom}
                     </span>
-                    <span className="text-xs text-[#F26B1D] font-medium">
+                    <span className="text-xs text-[#A64B2A] font-medium">
                       {emp.fonction}
                     </span>
                   </div>

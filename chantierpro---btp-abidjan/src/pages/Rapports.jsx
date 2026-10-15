@@ -65,7 +65,7 @@ export default function Rapports() {
       {/* ================= EN-TÊTE ET SÉLECTION PÉRIODE ================= */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
             Rapports & Synthèse Analytique
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
@@ -81,7 +81,7 @@ export default function Rapports() {
               onClick={() => setPeriod('mois')}
               className={`px-3 py-1.5 rounded-md font-medium transition-colors cursor-pointer ${
                 period === 'mois'
-                  ? 'bg-[#0B1B3A] text-white font-bold'
+                  ? 'bg-[#1E293B] text-white font-bold'
                   : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -92,7 +92,7 @@ export default function Rapports() {
               onClick={() => setPeriod('trimestre')}
               className={`px-3 py-1.5 rounded-md font-medium transition-colors cursor-pointer ${
                 period === 'trimestre'
-                  ? 'bg-[#0B1B3A] text-white font-bold'
+                  ? 'bg-[#1E293B] text-white font-bold'
                   : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -103,7 +103,7 @@ export default function Rapports() {
               onClick={() => setPeriod('annee')}
               className={`px-3 py-1.5 rounded-md font-medium transition-colors cursor-pointer ${
                 period === 'annee'
-                  ? 'bg-[#0B1B3A] text-white font-bold'
+                  ? 'bg-[#1E293B] text-white font-bold'
                   : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
@@ -136,7 +136,7 @@ export default function Rapports() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">
           <span className="text-[11px] font-bold text-slate-400 uppercase font-mono block">Dépenses Cumulées</span>
-          <div className="text-xl sm:text-2xl font-black font-heading text-[#0B1B3A] dark:text-white mt-1">
+          <div className="text-xl sm:text-2xl font-black font-heading text-[#1E293B] dark:text-white mt-1">
             3 830 000 000 FCFA
           </div>
           <p className="text-[11px] text-emerald-600 font-medium mt-0.5">+4.2% vs budget cible</p>
@@ -144,7 +144,7 @@ export default function Rapports() {
 
         <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs">
           <span className="text-[11px] font-bold text-slate-400 uppercase font-mono block">Volume Ciment Écoulé</span>
-          <div className="text-xl sm:text-2xl font-black font-heading text-[#F26B1D] mt-1">
+          <div className="text-xl sm:text-2xl font-black font-heading text-[#A64B2A] mt-1">
             8 300 Sacs
           </div>
           <p className="text-[11px] text-slate-400 mt-0.5">Sur l'ensemble des 6 chantiers</p>
@@ -186,7 +186,7 @@ export default function Rapports() {
                 </div>
                 <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
                   <div
-                    className="h-full rounded-full bg-[#0B1B3A] dark:bg-blue-500"
+                    className="h-full rounded-full bg-[#1E293B] dark:bg-blue-500"
                     style={{ width: `${poste.pourcentage * 2.2}%` }}
                   />
                 </div>
@@ -212,14 +212,14 @@ export default function Rapports() {
                 <Tooltip
                   formatter={(val) => [`${val}%`, 'Taux de présence']}
                   contentStyle={{
-                    backgroundColor: '#0B1B3A',
-                    borderColor: '#152A55',
+                    backgroundColor: '#1E293B',
+                    borderColor: '#334155',
                     color: '#fff',
                     borderRadius: '8px',
                     fontSize: '12px'
                   }}
                 />
-                <Bar dataKey="taux" fill="#F26B1D" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="taux" fill="#A64B2A" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -247,8 +247,8 @@ export default function Rapports() {
               <Tooltip
                 formatter={(val) => [formatFCFA(val), 'Montant consommé']}
                 contentStyle={{
-                  backgroundColor: '#0B1B3A',
-                  borderColor: '#152A55',
+                  backgroundColor: '#1E293B',
+                  borderColor: '#334155',
                   color: '#fff',
                   borderRadius: '8px',
                   fontSize: '12px'
@@ -257,9 +257,9 @@ export default function Rapports() {
               <Line
                 type="monotone"
                 dataKey="coutFCFA"
-                stroke="#F26B1D"
+                stroke="#A64B2A"
                 strokeWidth={3}
-                dot={{ r: 5, fill: '#0B1B3A', stroke: '#F26B1D', strokeWidth: 2 }}
+                dot={{ r: 5, fill: '#1E293B', stroke: '#A64B2A', strokeWidth: 2 }}
                 activeDot={{ r: 7 }}
               />
             </LineChart>

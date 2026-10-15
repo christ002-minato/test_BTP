@@ -57,32 +57,41 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen w-full flex bg-[#0B1B3A] text-slate-100">
-      {/* ================= PANNEAU GAUCHE ANIMÉ (BLEU NUIT & PLAN TECHNIQUE) ================= */}
-      <div className="hidden lg:flex lg:w-1/2 relative bg-[#071328] overflow-hidden flex-col justify-between p-12 border-r border-[#152A55]">
+    <div className="min-h-screen w-full flex bg-[#F5EBE0] dark:bg-[#1E293B] text-slate-800 dark:text-slate-100">
+      {/* ================= PANNEAU GAUCHE (PHOTO CHANTIER RÉELLE) ================= */}
+      <div className="hidden lg:flex lg:w-1/2 relative bg-[#0F172A] overflow-hidden flex-col justify-between p-12 border-r border-[#334155]">
+        {/* Photo réelle de chantier BTP Abidjan */}
+        <img
+          src="https://images.unsplash.com/photo-1541888946425-d0fbb1861564?w=1400&auto=format&fit=crop&q=80"
+          alt="Ouvriers sur un chantier de construction"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Voile terracotta/ardoise pour la lisibilité */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A]/96 via-[#1E293B]/88 to-[#A64B2A]/70" />
+
         {/* Grille technique de plan BTP */}
-        <div className="absolute inset-0 bg-blueprint-grid opacity-30" />
+        <div className="absolute inset-0 bg-blueprint-grid opacity-25" />
 
         {/* Motifs géométriques de plan en SVG */}
         <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full border border-white/10 pointer-events-none" />
-        <div className="absolute -right-12 -top-12 w-72 h-72 rounded-full border border-[#F26B1D]/20 pointer-events-none" />
+        <div className="absolute -right-12 -top-12 w-72 h-72 rounded-full border border-[#EAB308]/20 pointer-events-none" />
 
         {/* En-tête marque */}
         <div className="relative z-10 flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-[#F26B1D] text-white flex items-center justify-center shadow-lg shadow-[#F26B1D]/30 border border-[#d9590f]">
+          <div className="w-12 h-12 rounded-xl bg-[#A64B2A] text-white flex items-center justify-center shadow-lg shadow-[#A64B2A]/30 border border-[#8B3A2B]">
             <HardHat className="w-7 h-7" />
           </div>
           <div>
             <span className="font-heading text-2xl font-black tracking-wider text-white block uppercase leading-none">
-              Chantier<span className="text-[#F26B1D]">Pro</span>
+              Chantier<span className="text-[#EAB308]">Pro</span>
             </span>
-            <span className="text-xs text-slate-400 font-mono tracking-widest block uppercase mt-1">
+            <span className="text-xs text-slate-300 font-mono tracking-widest block uppercase mt-1">
               Plateforme SaaS BTP • Abidjan
             </span>
           </div>
         </div>
 
-        {/* Cœur visuel : Dessin technique de structure et phrase d'accroche */}
+        {/* Cœur visuel : phrase d'accroche */}
         <div className="relative z-10 my-auto py-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,27 +99,27 @@ export default function Login() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#152A55] border border-blue-500/30 text-blue-300 text-xs font-semibold tracking-wide uppercase">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAB308]/15 border border-[#EAB308]/40 text-[#EAB308] text-xs font-semibold tracking-wide uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#EAB308] animate-ping" />
               Système Opérationnel • Région Côte d'Ivoire
             </div>
 
             <h1 className="font-heading text-4xl xl:text-5xl font-black text-white uppercase tracking-tight leading-tight">
-              La rigueur d’ingénieur au service de vos <span className="text-[#F26B1D]">chantiers</span>.
+              La rigueur d’ingénieur au service de vos <span className="text-[#EAB308]">chantiers</span>.
             </h1>
 
-            <p className="text-slate-300 text-sm xl:text-base max-w-lg leading-relaxed font-normal">
+            <p className="text-slate-200 text-sm xl:text-base max-w-lg leading-relaxed font-normal">
               Suivi en temps réel des stocks de matériaux, pointage journalier des équipes sur site, et maîtrise des coûts en Francs CFA à Abidjan et sur tout le territoire.
             </p>
           </motion.div>
 
           {/* SVG animé de plan d'architecte */}
-          <div className="mt-8 p-4 rounded-xl bg-[#0B1B3A]/80 border border-[#152A55] backdrop-blur-xs">
-            <svg className="w-full h-32" viewBox="0 0 400 120" fill="none">
+          <div className="mt-8 p-4 rounded-xl bg-[#0F172A]/70 border border-[#334155] backdrop-blur-xs">
+            <svg className="w-full h-32" viewBox="0 0 400 120" fill="none" aria-hidden="true">
               {/* Lignes d'ingénierie */}
               <motion.path
                 d="M 20 100 L 80 40 L 140 100 L 200 20 L 260 100 L 320 50 L 380 100"
-                stroke="#3B82F6"
+                stroke="#38BDF8"
                 strokeWidth="2"
                 strokeDasharray="4 4"
                 initial={{ pathLength: 0 }}
@@ -130,35 +139,35 @@ export default function Login() {
                 y="20"
                 width="40"
                 height="80"
-                stroke="#F26B1D"
+                stroke="#EAB308"
                 strokeWidth="2"
-                fill="rgba(242, 107, 29, 0.1)"
+                fill="rgba(234, 179, 8, 0.12)"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 1 }}
               />
-              <circle cx="200" cy="20" r="4" fill="#F26B1D" />
-              <text x="210" y="25" fill="#F26B1D" fontSize="10" fontFamily="monospace">PILIER AXE B2</text>
+              <circle cx="200" cy="20" r="4" fill="#EAB308" />
+              <text x="210" y="25" fill="#EAB308" fontSize="10" fontFamily="monospace">PILIER AXE B2</text>
             </svg>
           </div>
 
           {/* Chiffres clés qui défilent */}
           <div className="mt-8 grid grid-cols-3 gap-4">
-            <div className="p-3.5 rounded-lg bg-[#081732] border border-[#152A55]">
-              <span className="text-[11px] text-slate-400 uppercase font-mono block">Chantiers Actifs</span>
+            <div className="p-3.5 rounded-lg bg-[#0F172A]/80 border border-[#334155]">
+              <span className="text-[11px] text-slate-300 uppercase font-mono block">Chantiers Actifs</span>
               <div className="text-2xl font-bold font-mono text-white mt-1">
                 <CountUp end={6} duration={1000} />
               </div>
             </div>
-            <div className="p-3.5 rounded-lg bg-[#081732] border border-[#152A55]">
-              <span className="text-[11px] text-slate-400 uppercase font-mono block">Budget Sous Gestion</span>
-              <div className="text-xl font-bold font-mono text-[#F26B1D] mt-1">
+            <div className="p-3.5 rounded-lg bg-[#0F172A]/80 border border-[#334155]">
+              <span className="text-[11px] text-slate-300 uppercase font-mono block">Budget Sous Gestion</span>
+              <div className="text-xl font-bold font-mono text-[#EAB308] mt-1">
                 <CountUp end={5170} suffix=" M" duration={1200} />
               </div>
             </div>
-            <div className="p-3.5 rounded-lg bg-[#081732] border border-[#152A55]">
-              <span className="text-[11px] text-slate-400 uppercase font-mono block">Taux Présence Moy.</span>
-              <div className="text-2xl font-bold font-mono text-emerald-400 mt-1">
+            <div className="p-3.5 rounded-lg bg-[#0F172A]/80 border border-[#334155]">
+              <span className="text-[11px] text-slate-300 uppercase font-mono block">Taux Présence Moy.</span>
+              <div className="text-2xl font-bold font-mono text-emerald-300 mt-1">
                 <CountUp end={94} suffix="%" duration={1100} />
               </div>
             </div>
@@ -166,9 +175,9 @@ export default function Login() {
         </div>
 
         {/* Pied de panneau gauche */}
-        <div className="relative z-10 flex items-center justify-between text-xs text-slate-400 border-t border-[#152A55] pt-4">
+        <div className="relative z-10 flex items-center justify-between text-xs text-slate-300 border-t border-[#334155] pt-4">
           <span>Cocody • Plateau • San-Pédro • Yamoussoukro</span>
-          <span className="font-mono text-[#F26B1D]">CERTIFIÉ ISO 9001 BTP</span>
+          <span className="font-mono text-[#EAB308]">CERTIFIÉ ISO 9001 BTP</span>
         </div>
       </div>
 
@@ -177,16 +186,16 @@ export default function Login() {
         <div className="w-full max-w-md space-y-6">
           {/* Logo visible sur mobile */}
           <div className="lg:hidden flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-lg bg-[#F26B1D] text-white flex items-center justify-center">
+            <div className="w-9 h-9 rounded-lg bg-[#A64B2A] text-white flex items-center justify-center">
               <HardHat className="w-5 h-5" />
             </div>
-            <span className="font-heading text-xl font-black uppercase text-[#0B1B3A] dark:text-white">
-              Chantier<span className="text-[#F26B1D]">Pro</span>
+            <span className="font-heading text-xl font-black uppercase text-[#1E293B] dark:text-white">
+              Chantier<span className="text-[#A64B2A]">Pro</span>
             </span>
           </div>
 
           <div>
-            <h2 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
               Espace Sécurisé Chantier
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
@@ -212,12 +221,13 @@ export default function Login() {
           {/* Formulaire de connexion */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
+              <label htmlFor="login-email" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">
                 Adresse e-mail professionnelle
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
+                  id="login-email"
                   type="email"
                   value={email}
                   onChange={(e) => {
@@ -226,14 +236,14 @@ export default function Login() {
                   }}
                   required
                   placeholder="nom@chantierpro.ci"
-                  className="w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0B1B3A] dark:focus:ring-blue-500 transition-colors"
+                  className="w-full pl-9 pr-3 py-2.5 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#A64B2A] dark:focus:ring-[#EAB308] transition-colors"
                 />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                <label htmlFor="login-password" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                   Mot de passe
                 </label>
                 <span className="text-[11px] text-slate-400 font-mono">Démo: password123</span>
@@ -241,6 +251,7 @@ export default function Login() {
               <div className="relative">
                 <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
+                  id="login-password"
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => {
@@ -249,11 +260,12 @@ export default function Login() {
                   }}
                   required
                   placeholder="••••••••••••"
-                  className="w-full pl-9 pr-10 py-2.5 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0B1B3A] dark:focus:ring-blue-500 transition-colors"
+                  className="w-full pl-9 pr-10 py-2.5 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#A64B2A] dark:focus:ring-[#EAB308] transition-colors"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -267,11 +279,11 @@ export default function Login() {
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-4 h-4 rounded text-[#F26B1D] focus:ring-[#F26B1D] border-slate-300"
+                  className="w-4 h-4 rounded text-[#A64B2A] focus:ring-[#A64B2A] border-slate-300"
                 />
                 <span className="text-slate-600 dark:text-slate-400">Se souvenir de moi</span>
               </label>
-              <span className="text-[#F26B1D] hover:underline cursor-pointer">
+              <span className="text-[#A64B2A] hover:underline cursor-pointer">
                 Assistance technique ?
               </span>
             </div>
@@ -302,12 +314,12 @@ export default function Login() {
                 onClick={() => selectDemoAccount('admin@chantierpro.ci', 'password123')}
                 className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between cursor-pointer ${
                   email === 'admin@chantierpro.ci'
-                    ? 'border-[#0B1B3A] dark:border-blue-500 bg-[#0B1B3A]/5 dark:bg-blue-900/20'
-                    : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850'
+                    ? 'border-[#1E293B] dark:border-blue-500 bg-[#1E293B]/5 dark:bg-blue-900/20'
+                    : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-8 h-8 rounded-full bg-[#0B1B3A] text-white flex items-center justify-center font-bold text-xs shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#1E293B] text-white flex items-center justify-center font-bold text-xs shrink-0">
                     AD
                   </div>
                   <div className="min-w-0">
@@ -319,7 +331,7 @@ export default function Login() {
                     </p>
                   </div>
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0B1B3A] text-white shrink-0">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#1E293B] text-white shrink-0">
                   Admin
                 </span>
               </button>
@@ -330,12 +342,12 @@ export default function Login() {
                 onClick={() => selectDemoAccount('chef@chantierpro.ci', 'password123')}
                 className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between cursor-pointer ${
                   email === 'chef@chantierpro.ci'
-                    ? 'border-[#F26B1D] bg-[#F26B1D]/10'
-                    : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850'
+                    ? 'border-[#A64B2A] bg-[#A64B2A]/10'
+                    : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-8 h-8 rounded-full bg-[#F26B1D] text-white flex items-center justify-center font-bold text-xs shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#A64B2A] text-white flex items-center justify-center font-bold text-xs shrink-0">
                     CC
                   </div>
                   <div className="min-w-0">
@@ -347,7 +359,7 @@ export default function Login() {
                     </p>
                   </div>
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#F26B1D] text-white shrink-0">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#A64B2A] text-white shrink-0">
                   Chef
                 </span>
               </button>
@@ -358,12 +370,12 @@ export default function Login() {
                 onClick={() => selectDemoAccount('magasin@chantierpro.ci', 'password123')}
                 className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between cursor-pointer ${
                   email === 'magasin@chantierpro.ci'
-                    ? 'border-emerald-600 bg-emerald-50 dark:bg-emerald-950/20'
-                    : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850'
+                    ? 'border-[#0284C7] bg-sky-50 dark:bg-[#0284C7]/15'
+                    : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
               >
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-8 h-8 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#0284C7] text-white flex items-center justify-center font-bold text-xs shrink-0">
                     MG
                   </div>
                   <div className="min-w-0">
@@ -375,7 +387,7 @@ export default function Login() {
                     </p>
                   </div>
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-600 text-white shrink-0">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-[#0284C7] text-white shrink-0">
                   Magasin
                 </span>
               </button>

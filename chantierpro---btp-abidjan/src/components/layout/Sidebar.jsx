@@ -86,21 +86,21 @@ export default function Sidebar({
   const visibleItems = allNavigationItems.filter((item) => item.visible);
 
   const sidebarContent = (
-    <div className="flex flex-col h-full bg-[#0B1B3A] text-white border-r border-[#152A55] select-none">
+    <div className="flex flex-col h-full bg-white dark:bg-[#0F172A] text-[#1E293B] dark:text-slate-100 border-r border-[#E8DFD8] dark:border-[#1E293B] select-none">
       {/* En-tête Logo */}
-      <div className="h-16 px-4 flex items-center justify-between border-b border-[#152A55] bg-[#071328]">
+      <div className="h-16 px-4 flex items-center justify-between border-b border-[#E8DFD8] dark:border-[#1E293B] bg-[#F5EBE0] dark:bg-[#0B1220]">
         <div className="flex items-center gap-3 overflow-hidden">
           {/* Logo ChantierPro : casque & règle */}
-          <div className="w-10 h-10 rounded-lg bg-[#F26B1D] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#F26B1D]/30 border border-[#d9590f]">
+          <div className="w-10 h-10 rounded-lg bg-[#A64B2A] text-white flex items-center justify-center shrink-0 shadow-md shadow-[#A64B2A]/30 border border-[#8B3A2B]">
             <HardHat className="w-6 h-6" />
           </div>
 
           {(!collapsed || mobileOpen) && (
             <div className="min-w-0 transition-opacity duration-200">
-              <span className="font-heading text-lg font-black tracking-wider text-white block uppercase leading-none">
-                Chantier<span className="text-[#F26B1D]">Pro</span>
+              <span className="font-heading text-lg font-black tracking-wider text-[#1E293B] dark:text-white block uppercase leading-none">
+                Chantier<span className="text-[#A64B2A] dark:text-[#EAB308]">Pro</span>
               </span>
-              <span className="text-[10px] text-slate-400 font-mono tracking-widest block uppercase mt-0.5">
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono tracking-widest block uppercase mt-0.5">
                 Abidjan • BTP v2.4
               </span>
             </div>
@@ -112,7 +112,7 @@ export default function Sidebar({
           <button
             type="button"
             onClick={() => setMobileOpen(false)}
-            className="md:hidden p-1.5 rounded-md text-slate-400 hover:text-white hover:bg-slate-800"
+            className="md:hidden p-1.5 rounded-md text-slate-500 dark:text-slate-400 hover:text-[#1E293B] hover:bg-[#E8DFD8] dark:hover:text-white dark:hover:bg-slate-800"
           >
             <X className="w-5 h-5" />
           </button>
@@ -121,17 +121,17 @@ export default function Sidebar({
 
       {/* Rôle utilisateur connecté */}
       {(!collapsed || mobileOpen) && currentUser && (
-        <div className="px-4 py-3 bg-[#081732] border-b border-[#152A55] flex items-center gap-3">
+        <div className="px-4 py-3 bg-[#F5EBE0]/70 dark:bg-[#0B1220] border-b border-[#E8DFD8] dark:border-[#1E293B] flex items-center gap-3">
           <img
             src={currentUser.avatar}
             alt={currentUser.name}
-            className="w-8 h-8 rounded-full object-cover ring-2 ring-[#F26B1D]/50"
+            className="w-8 h-8 rounded-full object-cover ring-2 ring-[#A64B2A]/50 dark:ring-[#EAB308]/50"
           />
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-bold text-white truncate leading-tight">
+            <p className="text-xs font-bold text-[#1E293B] dark:text-white truncate leading-tight">
               {currentUser.name}
             </p>
-            <span className="inline-block mt-0.5 text-[10px] font-semibold text-[#F26B1D] bg-[#F26B1D]/15 px-1.5 py-0.2 rounded border border-[#F26B1D]/30 uppercase">
+            <span className="inline-block mt-0.5 text-[10px] font-semibold text-[#A64B2A] dark:text-[#EAB308] bg-[#A64B2A]/10 dark:bg-[#EAB308]/15 px-1.5 py-0.2 rounded border border-[#A64B2A]/30 dark:border-[#EAB308]/30 uppercase">
               {currentUser.role}
             </span>
           </div>
@@ -150,8 +150,8 @@ export default function Sidebar({
               className={({ isActive }) =>
                 `relative flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   isActive
-                    ? 'text-white font-semibold bg-[#152A55]'
-                    : 'text-slate-300 hover:text-white hover:bg-[#112347]'
+                    ? 'text-[#A64B2A] dark:text-white font-semibold bg-[#F5EBE0] dark:bg-[#334155]'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-[#A64B2A] hover:bg-[#F5EBE0] dark:hover:text-white dark:hover:bg-[#334155]'
                 } ${collapsed && !mobileOpen ? 'justify-center px-2' : ''}`
               }
               title={collapsed && !mobileOpen ? item.label : undefined}
@@ -161,11 +161,11 @@ export default function Sidebar({
                   {isActive && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-[#F26B1D] rounded-r"
+                      className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-[#A64B2A] dark:bg-[#EAB308] rounded-r"
                       transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                     />
                   )}
-                  <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-[#F26B1D]' : 'text-slate-400'}`} />
+                  <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-[#A64B2A] dark:text-[#EAB308]' : 'text-slate-400'}`} />
                   {(!collapsed || mobileOpen) && (
                     <span className="truncate">{item.label}</span>
                   )}
@@ -177,12 +177,12 @@ export default function Sidebar({
       </nav>
 
       {/* Bas de sidebar : bandeau de sécurité BTP et bouton de rétraction */}
-      <div className="p-3 border-t border-[#152A55] bg-[#071328]">
+      <div className="p-3 border-t border-[#E8DFD8] dark:border-[#1E293B] bg-[#F5EBE0]/70 dark:bg-[#0B1220]">
         {/* Rétractation bureau */}
         <button
           type="button"
           onClick={() => setCollapsed(!collapsed)}
-          className="hidden md:flex w-full items-center justify-center gap-2 py-2 px-3 text-xs text-slate-400 hover:text-white hover:bg-[#112347] rounded-lg transition-colors cursor-pointer"
+          className="hidden md:flex w-full items-center justify-center gap-2 py-2 px-3 text-xs text-slate-500 dark:text-slate-400 hover:text-[#A64B2A] hover:bg-[#E8DFD8] dark:hover:text-white dark:hover:bg-[#334155] rounded-lg transition-colors cursor-pointer"
         >
           {collapsed ? (
             <ChevronRight className="w-4 h-4" />

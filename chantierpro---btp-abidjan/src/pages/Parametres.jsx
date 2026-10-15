@@ -52,7 +52,7 @@ export default function Parametres() {
     <PageTransition className="space-y-6 max-w-4xl">
       {/* ================= EN-TÊTE ================= */}
       <div className="pb-2 border-b border-slate-200 dark:border-slate-800">
-        <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+        <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
           Paramètres du Système & Profil
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
@@ -66,11 +66,11 @@ export default function Parametres() {
           <img
             src={currentUser?.avatar}
             alt={currentUser?.name}
-            className="w-16 h-16 rounded-xl object-cover ring-2 ring-[#F26B1D]"
+            className="w-16 h-16 rounded-xl object-cover ring-2 ring-[#A64B2A]"
           />
           <div className="space-y-1 flex-1">
             <div className="flex items-center gap-2">
-              <h3 className="font-heading font-black text-lg text-[#0B1B3A] dark:text-white uppercase">
+              <h3 className="font-heading font-black text-lg text-[#1E293B] dark:text-white uppercase">
                 {currentUser?.name}
               </h3>
               <Badge size="sm" variant="safety">
@@ -107,7 +107,7 @@ export default function Parametres() {
               onClick={() => theme === 'dark' && toggleTheme()}
               className={`p-4 rounded-xl border text-left transition-all cursor-pointer ${
                 theme === 'light'
-                  ? 'border-[#0B1B3A] ring-2 ring-[#0B1B3A]/20 bg-slate-50'
+                  ? 'border-[#1E293B] ring-2 ring-[#1E293B]/20 bg-slate-50'
                   : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/40'
               }`}
             >
@@ -125,7 +125,7 @@ export default function Parametres() {
               onClick={() => theme === 'light' && toggleTheme()}
               className={`p-4 rounded-xl border text-left transition-all cursor-pointer ${
                 theme === 'dark'
-                  ? 'border-[#F26B1D] ring-2 ring-[#F26B1D]/20 bg-slate-850'
+                  ? 'border-[#A64B2A] ring-2 ring-[#A64B2A]/20 bg-slate-800'
                   : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/40'
               }`}
             >
@@ -150,7 +150,7 @@ export default function Parametres() {
                 type="checkbox"
                 checked={notifStock}
                 onChange={(e) => setNotifStock(e.target.checked)}
-                className="w-4 h-4 mt-0.5 rounded text-[#F26B1D] focus:ring-[#F26B1D]"
+                className="w-4 h-4 mt-0.5 rounded text-[#A64B2A] focus:ring-[#A64B2A]"
               />
               <div>
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">
@@ -167,7 +167,7 @@ export default function Parametres() {
                 type="checkbox"
                 checked={notifLivraison}
                 onChange={(e) => setNotifLivraison(e.target.checked)}
-                className="w-4 h-4 mt-0.5 rounded text-[#F26B1D] focus:ring-[#F26B1D]"
+                className="w-4 h-4 mt-0.5 rounded text-[#A64B2A] focus:ring-[#A64B2A]"
               />
               <div>
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">
@@ -184,7 +184,7 @@ export default function Parametres() {
                 type="checkbox"
                 checked={notifPointage}
                 onChange={(e) => setNotifPointage(e.target.checked)}
-                className="w-4 h-4 mt-0.5 rounded text-[#F26B1D] focus:ring-[#F26B1D]"
+                className="w-4 h-4 mt-0.5 rounded text-[#A64B2A] focus:ring-[#A64B2A]"
               />
               <div>
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">

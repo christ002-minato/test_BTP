@@ -65,7 +65,7 @@ export default function Personnel() {
       {/* ================= EN-TÊTE ================= */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#0B1B3A] dark:text-white uppercase tracking-tight">
+          <h1 className="font-heading text-2xl sm:text-3xl font-black text-[#1E293B] dark:text-white uppercase tracking-tight">
             Répertoire des Équipes & Ouvriers
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
@@ -89,7 +89,7 @@ export default function Personnel() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Rechercher par nom, prénom, matricule ou métier..."
-            className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0B1B3A]"
+            className="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E293B]"
           />
         </div>
 
@@ -143,7 +143,7 @@ export default function Personnel() {
           >
             <TableCell>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#0B1B3A] text-white flex items-center justify-center font-bold text-xs shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#1E293B] text-white flex items-center justify-center font-bold text-xs shrink-0">
                   {emp.prenom[0]}{emp.nom[0]}
                 </div>
                 <div>
@@ -162,7 +162,7 @@ export default function Personnel() {
             </TableCell>
 
             <TableCell>
-              <span className="text-xs font-semibold text-[#0B1B3A] dark:text-slate-200 block">
+              <span className="text-xs font-semibold text-[#1E293B] dark:text-slate-200 block">
                 {emp.fonction}
               </span>
               <span className="text-[10px] text-slate-400">
@@ -196,7 +196,7 @@ export default function Personnel() {
             <TableCell>
               <button
                 type="button"
-                className="text-xs text-[#F26B1D] font-bold hover:underline flex items-center gap-1 cursor-pointer"
+                className="text-xs text-[#A64B2A] font-bold hover:underline flex items-center gap-1 cursor-pointer"
               >
                 Détails <ChevronRight className="w-3.5 h-3.5" />
               </button>
@@ -216,15 +216,15 @@ export default function Personnel() {
         {selectedEmployee && (
           <div className="space-y-6">
             {/* Carte d'identité BTP */}
-            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
-              <div className="w-14 h-14 rounded-xl bg-[#0B1B3A] text-[#F26B1D] flex items-center justify-center font-heading text-xl font-black shrink-0 border border-white/10">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+              <div className="w-14 h-14 rounded-xl bg-[#1E293B] text-[#A64B2A] flex items-center justify-center font-heading text-xl font-black shrink-0 border border-white/10">
                 {selectedEmployee.prenom[0]}{selectedEmployee.nom[0]}
               </div>
               <div className="space-y-1">
-                <h3 className="font-heading font-black text-lg text-[#0B1B3A] dark:text-white uppercase leading-tight">
+                <h3 className="font-heading font-black text-lg text-[#1E293B] dark:text-white uppercase leading-tight">
                   {selectedEmployee.prenom} {selectedEmployee.nom}
                 </h3>
-                <p className="text-xs font-semibold text-[#F26B1D]">
+                <p className="text-xs font-semibold text-[#A64B2A]">
                   {selectedEmployee.fonction}
                 </p>
                 <p className="text-[11px] text-slate-500 dark:text-slate-400">

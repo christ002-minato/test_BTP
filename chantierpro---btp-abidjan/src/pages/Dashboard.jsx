@@ -92,13 +92,21 @@ export default function Dashboard() {
   return (
     <PageTransition className="space-y-6">
       {/* ================= BANDEAU D'ACCUEIL MÉTIER ================= */}
-      <div className="relative rounded-xl bg-gradient-to-r from-[#0B1B3A] via-[#112347] to-[#0B1B3A] text-white p-6 sm:p-8 overflow-hidden shadow-lg border border-[#152A55]">
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-stripes-safety-soft opacity-20 pointer-events-none" />
+      <div className="relative rounded-xl bg-[#1E293B] text-white p-6 sm:p-8 overflow-hidden shadow-lg border border-[#334155]">
+        {/* Image réelle de chantier BTP en fond */}
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&auto=format&fit=crop&q=80"
+          alt="Chantier de construction à Abidjan"
+          className="absolute inset-0 w-full h-full object-cover opacity-25"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1E293B] via-[#1E293B]/85 to-[#1E293B]/40" />
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-stripes-safety-soft opacity-30 pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1.5">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F26B1D]/20 text-[#F26B1D] text-xs font-bold font-mono tracking-wider uppercase border border-[#F26B1D]/40">
-                <span className="w-2 h-2 rounded-full bg-[#F26B1D] animate-ping" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EAB308]/20 text-[#EAB308] text-xs font-bold font-mono tracking-wider uppercase border border-[#EAB308]/40">
+                <span className="w-2 h-2 rounded-full bg-[#EAB308] animate-ping" />
                 Opérations Abidjan
               </span>
               <span className="text-xs text-slate-300 font-medium">
@@ -116,11 +124,11 @@ export default function Dashboard() {
           <div className="flex flex-wrap items-center gap-2.5 shrink-0">
             {isAdmin && (
               <Button
-                variant="outline"
+                variant="outlineOnDark"
                 size="sm"
                 onClick={() => navigate('/fournisseurs')}
                 icon={Truck}
-                className="bg-white/10 hover:bg-white/20 text-white border-white/20 text-xs"
+                className="text-xs"
               >
                 Bons de commande
               </Button>
@@ -135,11 +143,11 @@ export default function Dashboard() {
               Pointage du jour
             </Button>
             <Button
-              variant="outline"
+              variant="outlineOnDark"
               size="sm"
               onClick={() => navigate('/stocks')}
               icon={Package}
-              className="bg-white/10 hover:bg-white/20 text-white border-white/20 text-xs"
+              className="text-xs"
             >
               Sortie de stock
             </Button>
@@ -160,7 +168,7 @@ export default function Dashboard() {
               <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                 Chantiers Actifs
               </span>
-              <div className="text-3xl font-black font-heading text-[#0B1B3A] dark:text-white">
+              <div className="text-3xl font-black font-heading text-[#1E293B] dark:text-white">
                 <CountUp end={activeSitesCount} duration={800} />
               </div>
               <p className="text-[11px] text-slate-400">
@@ -173,7 +181,7 @@ export default function Dashboard() {
           </div>
           <div className="px-5 py-2.5 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
             <span className="text-slate-500">Avancement moyen</span>
-            <span className="font-bold text-[#0B1B3A] dark:text-slate-200">60.3%</span>
+            <span className="font-bold text-[#1E293B] dark:text-slate-200">60.3%</span>
           </div>
         </Card>
 
@@ -224,14 +232,14 @@ export default function Dashboard() {
               <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                 Présence du Jour
               </span>
-              <div className="text-3xl font-black font-heading text-[#F26B1D]">
+              <div className="text-3xl font-black font-heading text-[#A64B2A]">
                 <CountUp end={presenceRate} suffix="%" duration={900} />
               </div>
               <p className="text-[11px] text-slate-400">
                 {presentEmployees} ouvriers pointés sur {totalEmployees}
               </p>
             </div>
-            <div className="w-11 h-11 rounded-lg bg-orange-50 dark:bg-orange-950/40 text-[#F26B1D] flex items-center justify-center shrink-0">
+            <div className="w-11 h-11 rounded-lg bg-orange-50 dark:bg-orange-950/40 text-[#A64B2A] flex items-center justify-center shrink-0">
               <Users className="w-6 h-6" />
             </div>
           </div>
@@ -255,7 +263,7 @@ export default function Dashboard() {
               <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                 Budget Engagé
               </span>
-              <div className="text-2xl sm:text-3xl font-black font-heading text-[#0B1B3A] dark:text-white truncate">
+              <div className="text-2xl sm:text-3xl font-black font-heading text-[#1E293B] dark:text-white truncate">
                 <CountUp end={totalBudgetEngage} isCurrency duration={1100} />
               </div>
               <p className="text-[11px] text-slate-400">
@@ -298,8 +306,8 @@ export default function Dashboard() {
                     name === 'ciment' ? 'Ciment CPJ' : (name === 'acier' ? 'Aciers Ø10-16' : 'Agrégats')
                   ]}
                   contentStyle={{
-                    backgroundColor: '#0B1B3A',
-                    borderColor: '#152A55',
+                    backgroundColor: '#1E293B',
+                    borderColor: '#334155',
                     color: '#fff',
                     borderRadius: '8px',
                     fontSize: '12px'
@@ -309,8 +317,8 @@ export default function Dashboard() {
                   wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }}
                   formatter={(v) => (v === 'ciment' ? 'Ciment (Sacs)' : (v === 'acier' ? 'Ferraillage (Barres)' : 'Agrégats (m³)'))}
                 />
-                <Bar dataKey="ciment" fill="#0B1B3A" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="acier" fill="#F26B1D" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="ciment" fill="#1E293B" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="acier" fill="#A64B2A" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="agregats" fill="#64748B" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
@@ -342,8 +350,8 @@ export default function Dashboard() {
                 <Tooltip
                   formatter={(val, name) => [`${val} personne(s)`, name]}
                   contentStyle={{
-                    backgroundColor: '#0B1B3A',
-                    borderColor: '#152A55',
+                    backgroundColor: '#1E293B',
+                    borderColor: '#334155',
                     color: '#fff',
                     borderRadius: '8px',
                     fontSize: '12px'
@@ -392,12 +400,12 @@ export default function Dashboard() {
               <div
                 key={site.id}
                 onClick={() => navigate(`/chantiers/${site.id}`)}
-                className="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-[#F26B1D]/50 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-all cursor-pointer space-y-2"
+                className="p-3.5 rounded-lg border border-[#E8DFD8] dark:border-slate-800 hover:border-[#A64B2A]/50 hover:bg-[#F5EBE0]/60 dark:hover:bg-slate-800/40 transition-all cursor-pointer space-y-2"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4">
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h4 className="font-heading font-bold text-sm text-[#0B1B3A] dark:text-white truncate">
+                      <h4 className="font-heading font-bold text-sm text-[#1E293B] dark:text-white truncate">
                         {site.name}
                       </h4>
                       <Badge size="sm">{site.status}</Badge>
@@ -407,7 +415,7 @@ export default function Dashboard() {
                     </p>
                   </div>
                   <div className="text-right shrink-0">
-                    <span className="font-heading font-black text-base text-[#F26B1D] font-mono">
+                    <span className="font-heading font-black text-base text-[#A64B2A] font-mono">
                       {site.progress}%
                     </span>
                     <span className="text-[11px] text-slate-400 block font-mono">
@@ -419,7 +427,7 @@ export default function Dashboard() {
                 {/* Barre de progression avec marqueur */}
                 <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-[#0B1B3A] to-[#F26B1D] h-full rounded-full transition-all duration-500"
+                    className="bg-gradient-to-r from-[#A64B2A] to-[#EAB308] h-full rounded-full transition-all duration-500"
                     style={{ width: `${site.progress}%` }}
                   />
                 </div>
@@ -482,7 +490,7 @@ export default function Dashboard() {
             <div className="space-y-3.5 divide-y divide-slate-100 dark:divide-slate-800">
               {recentActivities.map((act) => (
                 <div key={act.id} className="pt-3 first:pt-0 flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-[#F26B1D] mt-1.5 shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-[#A64B2A] mt-1.5 shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 truncate">
                       {act.title}

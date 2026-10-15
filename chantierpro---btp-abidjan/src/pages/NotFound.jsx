@@ -15,19 +15,19 @@ export default function NotFound() {
   return (
     <PageTransition className="min-h-[70vh] flex flex-col items-center justify-center text-center p-6">
       <div className="relative mb-6">
-        <div className="w-24 h-24 rounded-2xl bg-[#0B1B3A] text-[#F26B1D] flex items-center justify-center shadow-xl border border-white/10 mx-auto">
+        <div className="w-24 h-24 rounded-2xl bg-[#1E293B] text-[#A64B2A] flex items-center justify-center shadow-xl border border-white/10 mx-auto">
           <Compass className="w-12 h-12 animate-pulse" />
         </div>
-        <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-[#F26B1D] text-white flex items-center justify-center">
+        <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-[#A64B2A] text-white flex items-center justify-center">
           <HardHat className="w-4 h-4" />
         </div>
       </div>
 
-      <span className="text-xs font-mono font-bold tracking-widest text-[#F26B1D] uppercase">
+      <span className="text-xs font-mono font-bold tracking-widest text-[#A64B2A] uppercase">
         Erreur 404 • Hors Périmètre
       </span>
 
-      <h1 className="font-heading text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#0B1B3A] dark:text-white mt-1">
+      <h1 className="font-heading text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1E293B] dark:text-white mt-1">
         Zone de Chantier Introuvable
       </h1>
 

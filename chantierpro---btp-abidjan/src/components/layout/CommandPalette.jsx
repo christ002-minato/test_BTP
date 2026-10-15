@@ -147,7 +147,7 @@ export default function CommandPalette({ isOpen, onClose }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#0B1B3A]/70 backdrop-blur-xs"
+            className="fixed inset-0 bg-[#1E293B]/70 backdrop-blur-xs"
           />
 
           <motion.div
@@ -198,7 +198,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                       onMouseEnter={() => setSelectedIndex(idx)}
                       className={`flex items-center justify-between px-3.5 py-2.5 rounded-lg cursor-pointer transition-colors ${
                         isSelected
-                          ? 'bg-[#F26B1D]/10 text-[#0B1B3A] dark:text-orange-300'
+                          ? 'bg-[#A64B2A]/10 text-[#1E293B] dark:text-orange-300'
                           : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 text-slate-700 dark:text-slate-300'
                       }`}
                     >
@@ -206,7 +206,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                         <div
                           className={`w-8 h-8 rounded-md flex items-center justify-center shrink-0 ${
                             isSelected
-                              ? 'bg-[#F26B1D] text-white'
+                              ? 'bg-[#A64B2A] text-white'
                               : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'
                           }`}
                         >
@@ -227,7 +227,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                           {item.category}
                         </span>
                         {isSelected && (
-                          <CornerDownLeft className="w-4 h-4 text-[#F26B1D]" />
+                          <CornerDownLeft className="w-4 h-4 text-[#A64B2A]" />
                         )}
                       </div>
                     </div>
